@@ -7,21 +7,64 @@
 ## Install
 
 ```bash
-npm install --save styled-modal
+$ npm install styled-modal
+$ yarn add styled-modal
 ```
 
 ## Usage
 
-```tsx
-import React, { Component } from 'react'
+### Step1: Set up provider
+```jsx
+import React from 'react'
+import { render } from 'react-dom'
+import { ModalProvider } from 'styled-modal'
+import App from './components/App'
 
-import MyComponent from 'styled-modal'
-import 'styled-modal/dist/index.css'
+const rootElement = document.getElementById('root')
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+render(
+  <ModalProvider root={rootElement}>
+    <App />
+  </ModalProvider>,
+  document.getElementById(rootElement)
+)
+```
+
+### Step2 Render modal component
+
+```jsx
+import React, { FC, useState } from 'react'
+import { Modal } from 'styled-modal'
+
+const ModalExample: FC<{}> = () => {
+  const [visible, setVisible] = useState(true)
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setVisible(true)
+        }}
+      >
+        Open Modal
+      </button>
+
+      <Modal
+        visible={visible}
+        onClose={() => {
+          setVisible(false)
+        }}
+      >
+        // Here is modal body
+        <div>
+          <h2>Modal title</h2>
+          <p>
+            modal contents
+          </p>
+        </div>
+      </Modal>
+    </div>
+  )
 }
 ```
 
