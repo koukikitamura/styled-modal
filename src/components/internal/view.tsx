@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from 'react'
+import { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import {
   space,
@@ -21,7 +21,7 @@ import {
   PositionProps,
 } from 'styled-system'
 
-type StyledSystemProps =
+export type StyledSystemProps =
 SpaceProps &
 ColorProps &
 TypographyProps &
@@ -32,7 +32,7 @@ BackgroundProps &
 BordersProps &
 PositionProps
 
-const styledSystemProps = [
+export const styledSystemProps = [
   typography,
   space,
   layout,

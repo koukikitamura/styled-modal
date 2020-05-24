@@ -1,10 +1,15 @@
 import React from 'react'
+import { ModalProvider } from 'styled-modal'
+import { ModalExample } from './components/modal-example'
 
-import { ExampleComponent } from 'styled-modal'
-import 'styled-modal/dist/index.css'
+const root = document.getElementById('root')
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <ModalProvider root={root}>
+      <ModalExample />
+    </ModalProvider>
+  )
 }
 
 export default App
