@@ -1,65 +1,30 @@
 # styled-modal
-Modal components for react
 
-## Installation
-```
-$ npm install styled-modal
-$ yarn add styled-modal
-```
+> Modal components for react
 
-## Examples
+[![NPM](https://img.shields.io/npm/v/styled-modal.svg)](https://www.npmjs.com/package/styled-modal) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-### Step1: Set up provider
-```jsx
-import React from 'react'
-import { render } from 'react-dom'
-import { ModalProvider } from 'styled-modal'
-import App from './components/App'
+## Install
 
-const rootElement = document.getElementById('root')
-
-render(
-  <ModalProvider root={rootElement}>
-    <App />
-  </ModalProvider>,
-  document.getElementById(rootElement)
-)
+```bash
+npm install --save styled-modal
 ```
 
-### Step2 Render modal component
+## Usage
 
-```jsx
-import React, { FC, useState } from 'react'
-import { Modal } from 'styled-modal'
+```tsx
+import React, { Component } from 'react'
 
-const ModalExample: FC<{}> = () => {
-  const [visible, setVisible] = useState(true)
+import MyComponent from 'styled-modal'
+import 'styled-modal/dist/index.css'
 
-  return (
-    <div>
-      <button
-        onClick={() => {
-          setVisible(true)
-        }}
-      >
-        Open Modal
-      </button>
-
-      <Modal
-        visible={visible}
-        onClose={() => {
-          setVisible(false)
-        }}
-      >
-        // Here is modal body
-        <div>
-          <h2>Modal title</h2>
-          <p>
-            modal contents
-          </p>
-        </div>
-      </Modal>
-    </div>
-  )
+class Example extends Component {
+  render() {
+    return <MyComponent />
+  }
 }
 ```
+
+## License
+
+MIT © [koukikitamura](https://github.com/koukikitamura)

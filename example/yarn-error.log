@@ -1,0 +1,52 @@
+Arguments: 
+  /Users/koki_kitamura/.nvm/versions/node/v12.6.0/bin/node /Users/koki_kitamura/.nvm/versions/node/v12.6.0/bin/yarn install
+
+PATH: 
+  /Users/koki_kitamura/dev/src/github.com/koukikitamura/styled-modal/node_modules/.bin:/Users/koki_kitamura/.nvm/versions/node/v12.6.0/bin:/usr/local/opt/imagemagick@6/bin:./node_modules/.bin:/Users/koki_kitamura/.jenv/shims:/Users/koki_kitamura/.jenv/bin:/Users/koki_kitamura/.rbenv/shims:/Users/koki_kitamura/.rbenv/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/koki_kitamura/.nvm/versions/node/v12.6.0/bin:/usr/local/opt/imagemagick@6/bin:./node_modules/.bin:/Users/koki_kitamura/.jenv/shims:/Users/koki_kitamura/.jenv/bin:/Users/koki_kitamura/.rbenv/shims:/Users/koki_kitamura/.rbenv/bin:/Users/koki_kitamura/dev/bin:/Users/koki_kitamura/Library/Android/sdk/emulator:/Users/koki_kitamura/Library/Android/sdk/tools:/Users/koki_kitamura/Library/Android/sdk/tools/bin:/Users/koki_kitamura/Library/Android/sdk/platform-tools:/Users/koki_kitamura/dev/bin:/Users/koki_kitamura/Library/Android/sdk/emulator:/Users/koki_kitamura/Library/Android/sdk/tools:/Users/koki_kitamura/Library/Android/sdk/tools/bin:/Users/koki_kitamura/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, lstat '/Users/koki_kitamura/dev/src/github.com/koukikitamura/styled-modal/styled-modal/node_modules/react-scripts/node_modules/@babel/plugin-syntax-object-rest-spread'
+
+npm manifest: 
+  {
+    "name": "styled-modal-example",
+    "homepage": "https://koukikitamura.github.io/styled-modal",
+    "version": "0.0.0",
+    "private": true,
+    "dependencies": {
+      "react": "link:../node_modules/react",
+      "react-dom": "link:../node_modules/react-dom",
+      "react-scripts": "link:../node_modules/react-scripts",
+      "styled-modal": "link:.."
+    },
+    "scripts": {
+      "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
+      "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+      "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
+      "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
