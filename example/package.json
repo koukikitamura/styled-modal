@@ -1,13 +1,13 @@
 {
-  "name": "styled-modal-example",
-  "homepage": "https://koukikitamura.github.io/styled-modal",
+  "name": "styled-modal-react-example",
+  "homepage": "https://koukikitamura.github.io/styled-modal-react",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
-    "styled-modal": "link:.."
+    "styled-modal-react": "link:.."
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal } from 'styled-modal'
+import { Modal } from 'styled-modal-react'
 
 export const ModalExample = () => {
   const [visible, setVisible] = useState(true)
