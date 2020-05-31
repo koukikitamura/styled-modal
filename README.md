@@ -1,14 +1,14 @@
-# styled-modal
+# styled-modal-react
 
 > Modal components for react
 
-[![NPM](https://img.shields.io/npm/v/styled-modal.svg)](https://www.npmjs.com/package/styled-modal) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/styled-modal-react.svg)](https://www.npmjs.com/package/styled-modal-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-$ npm install styled-modal
-$ yarn add styled-modal
+$ npm install styled-modal-react
+$ yarn add styled-modal-react
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ $ yarn add styled-modal
 ```jsx
 import React from 'react'
 import { render } from 'react-dom'
-import { ModalProvider } from 'styled-modal'
+import { ModalProvider } from 'styled-modal-react'
 import App from './components/App'
 
 const rootElement = document.getElementById('root')
@@ -34,7 +34,7 @@ render(
 
 ```jsx
 import React, { FC, useState } from 'react'
-import { Modal } from 'styled-modal'
+import { Modal } from 'styled-modal-react'
 
 const ModalExample: FC<{}> = () => {
   const [visible, setVisible] = useState(true)

@@ -2,6 +2,30 @@ import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { typography, space, layout, flexbox, color, position, grid, background, borders } from 'styled-system';
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _taggedTemplateLiteralLoose(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  strings.raw = raw;
+  return strings;
+}
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -26767,20 +26791,22 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-const styledSystemProps = [typography, space, layout, flexbox, color, position, grid, background, borders];
-const View = styled('div')({}, styledSystemProps);
+var styledSystemProps = [typography, space, layout, flexbox, color, position, grid, background, borders];
+var View = styled('div')({}, styledSystemProps);
 
-const CloseIcon = props => React.createElement(SVGContainer, Object.assign({}, props), React.createElement("svg", {
-  width: "11",
-  height: "11",
-  viewBox: "0 0 11 11",
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg"
-}, React.createElement("path", {
-  d: "M10.6955 1.339L6.7395 5.295L10.8105 9.3545L9.718 10.4585L5.647 6.3875L1.5415 10.4815L0.449 9.3775L4.543 5.2835L0.5755 1.316L1.668 0.211999L5.6355 4.191L9.5915 0.235L10.6955 1.339Z",
-  fill: "gray"
-})));
-const SVGContainer = styled('span')({
+var CloseIcon = function CloseIcon(props) {
+  return React.createElement(SVGContainer, Object.assign({}, props), React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 11 11",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, React.createElement("path", {
+    d: "M10.6955 1.339L6.7395 5.295L10.8105 9.3545L9.718 10.4585L5.647 6.3875L1.5415 10.4815L0.449 9.3775L4.543 5.2835L0.5755 1.316L1.668 0.211999L5.6355 4.191L9.5915 0.235L10.6955 1.339Z",
+    fill: "gray"
+  })));
+};
+var SVGContainer = styled('span')({
   display: 'inline-block',
   svg: {
     verticalAlign: "middle",
@@ -26790,98 +26816,63 @@ const SVGContainer = styled('span')({
       fill: 'gray'
     }
   }
-}, props => props.color && css({
-  svg: {
-    '*': {
-      fill: props.color
+}, function (props) {
+  return props.color && css({
+    svg: {
+      '*': {
+        fill: props.color
+      }
     }
-  }
-}), styledSystemProps);
+  });
+}, styledSystemProps);
 
-let _ = t => t,
-    _t;
-const ModalContext = React.createContext({
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\n  position: fixed;\n  width: 100%;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.8);\n  z-index: 1;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  display: flex;\n  visibility: hidden;\n  pointer-events: none;\n\n  &.visible {\n    opacity: 1;\n    visibility: visible;\n    pointer-events: auto;\n  }\n\n  &.invisible {\n    opacity: 0;\n    visibility: hidden;\n    pointer-events: none;\n    animation-fill-mode: forwards;\n  }\n\n  .container {\n    background: white;\n    max-width: 720px;\n    max-height: 90%;\n    border-radius: 5px;\n  }\n\n  .header {\n    display: flex;\n    justify-content: flex-end;\n    padding: 12px;\n    .close {\n      display: inline-block;\n      cursor: pointer;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var ModalContext = React.createContext({
   root: null
 });
-const Modal = ({
-  visible,
-  onClose,
-  ...props
-}) => {
-  const context = useContext(ModalContext);
+var Modal = function Modal(_ref) {
+  var visible = _ref.visible,
+      onClose = _ref.onClose,
+      props = _objectWithoutPropertiesLoose(_ref, ["visible", "onClose"]);
+
+  var context = useContext(ModalContext);
 
   if (!context.root) {
     return null;
   }
 
-  const visibleClass = visible ? 'visible' : 'invisible';
+  var visibleClass = visible ? 'visible' : 'invisible';
   return reactDom.createPortal(React.createElement(ModalContainer, {
-    className: `${visibleClass}`
+    className: "" + visibleClass
   }, React.createElement(View, Object.assign({
     className: "container"
   }, props), React.createElement(View, {
     className: "header"
   }, React.createElement(CloseIcon, {
     className: "close",
-    onClick: () => {
+    onClick: function onClick() {
       onClose && onClose();
     }
   })), React.createElement(View, {
     className: "contant"
   }, props.children))), context.root);
 };
-const ModalContainer = styled.div(_t || (_t = _`
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
-  visibility: hidden;
-  pointer-events: none;
+var ModalContainer = styled.div(_templateObject());
+var ModalProvider = function ModalProvider(_ref2) {
+  var root = _ref2.root,
+      props = _objectWithoutPropertiesLoose(_ref2, ["root"]);
 
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-  &.invisible {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    animation-fill-mode: forwards;
-  }
-
-  .container {
-    background: white;
-    max-width: 720px;
-    max-height: 90%;
-    border-radius: 5px;
-  }
-
-  .header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 12px;
-    .close {
-      display: inline-block;
-      cursor: pointer;
-    }
-  }
-`));
-const ModalProvider = ({
-  root,
-  ...props
-}) => {
   return React.createElement(ModalContext.Provider, {
     value: {
-      root
+      root: root
     }
   }, props.children);
 };
